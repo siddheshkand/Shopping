@@ -1,0 +1,16 @@
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of products">
+            <div class="card" style="width: 18rem;">
+                <img [src]="item.imageUrl" class="card-img-top" height="150" style="object-fit: contain;" >
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                
+                  <a class="btn btn-primary" (click)="addToCart(item)">Buy for ₹ {{item.price}}</a>
+                
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

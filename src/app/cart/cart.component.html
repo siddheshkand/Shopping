@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table stripped">
+        <thead>
+            <tr>
+                <th>SrNo.</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart;let i = index">
+                <td>{{i+1}}</td>
+                <td><img [src]="item.imageUrl" style="width: 150px ;height: 150px ;object-fit: contain;" alt=""></td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.quanity}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.price*item.quanity}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"></td>
+                <td>Grand Total {{getGrandTotal()}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
